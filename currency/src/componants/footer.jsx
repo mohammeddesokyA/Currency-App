@@ -1,41 +1,23 @@
 import React from "react";
 
-const footerStyle = {
-    position: "fixed",
-    left: 0,
-    bottom: 0,
-    width: "100%",
-    background: "gray",
-    color: "#fff",
-    textAlign: "center",
-    padding: "1rem 0",
-    letterSpacing: "1px",
-    animation: "slideUp 1s ease",
-    zIndex: 100,
-};
-
-const keyframes = `
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-`;
-
 function Footer() {
-    return (
-        <>
-            <style>{keyframes}</style>
-            <footer style={footerStyle}>
-                &copy; {new Date().getFullYear()} Currency App. All rights reserved.
-            </footer>
-        </>
-    );
+  return (
+    <footer className="absolute bottom-0 w-full py-4 bg-transparent text-gray-600 dark:text-gray-300 text-sm">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between px-4">
+        <p className="mb-2 sm:mb-0">
+          &copy; {new Date().getFullYear()} $ Convert. Built with React + Tailwind.
+        </p>
+        <nav className="flex gap-4">
+          <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">
+            Rates source
+          </a>
+          <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">
+            Privacy
+          </a>
+        </nav>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
